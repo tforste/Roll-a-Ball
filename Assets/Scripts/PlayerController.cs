@@ -31,4 +31,13 @@ public class PlayerController : MonoBehaviour {
 
         rb.AddForce(movement * speed);
     }
+
+    //Called by Unity when our object touched a trigger collider
+    void OnTriggerEnter(Collider other)
+    {
+       if(other.gameObject.CompareTag("Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
